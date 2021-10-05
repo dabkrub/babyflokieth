@@ -1,0 +1,1395 @@
+//config;
+$blue1: #62688F
+$blue2: #8A92B2
+$orange: #FFAE73
+$darkblue: #333751
+$white: #E0FBFC
+$black: #3A2D26
+$brown: #792330
+$red: #C93B4F
+$cream: #FFFFF4
+$jumbo: 6.25em //100px
+$header: 3.75em //60px
+$verybig: 3em //48px
+$big: 2.25em //36px
+$morethanmediumbutnotbig: 2.125em //34px
+$medium: 1.625em //26px
+$small: 1.5em //24px
+$verysmall: 1.3125em //21px
+$smallest: 1em //16px
+$mobilesmallest: 0.875em //16px
+
+@font-face
+    font-family: gotham
+    src: url("./fonts/Gotham-Medium.otf")
+
+@font-face
+    font-family: gothamBold
+    src: url("./fonts/Gotham-Ultra.otf")
+
+@font-face
+    font-family: gothamLight
+    src: url("./fonts/Gotham-Light.otf")
+
+@font-face
+    font-family: homepageBold
+    src: url("./fonts/HomepageBaukasten-Bold.ttf")
+
+@font-face
+    font-family: homepageBook
+    src: url("./fonts/HomepageBaukasten-Book.ttf")
+
+@font-face
+    font-family: helvethaicaBlkExt
+    src: url("./fonts/DB HELVETHAICA X BLK EXT V3.2.TTF")
+
+@font-face
+    font-family: helvethaicaBlk
+    src: url("./fonts/DB HELVETHAICA X BLK V3.2.TTF")
+
+@font-face
+    font-family: helvethaicaX
+    src: url("./fonts/DB_HELVETHAICA_X.TTF")
+
+@font-face
+    font-family: helvethaicaBdCond
+    src: url("./fonts/DB Helvethaica X Bd Cond.ttf")
+
+@font-face
+    font-family: helvethaicaItalic
+    src: url("./fonts/DB HELVETHAICA X IT.TTF")
+
+@font-face
+    font-family: nordin
+    src: url("./fonts/Nordin Regular.ttf")
+
+@font-face
+    font-family: nordinRough
+    src: url("./fonts/Nordin Rough.ttf")
+
+@font-face
+    font-family: praditBold
+    src: url("./fonts/DB Pradit X Bd.ttf")
+
+html, body
+    font-family: gotham
+    font-weight: normal
+    background-color: $cream
+    overflow-x: hidden
+
+//navComponent    
+nav
+    width: 100%
+    background: rgb(0,127,230)
+    background: linear-gradient(-99deg, #C93B4F 0%, #EED7AB 100%)
+    color: $white
+    position: fixed
+    font-family: nordin
+    z-index: 1000
+
+    @media screen and (max-width: 1300px)
+        display: none
+
+    .nav-flex
+        padding: 0 20px 0 20px
+        display: flex
+        justify-content: space-between
+        align-items: center
+        height: 65px
+
+    .nav-logo-flex
+        display: flex
+        gap: 20px
+        align-items: start
+        margin-top: 10px
+        img
+            height: 50px
+            transform: translateY(16px)
+            width: auto
+        h1
+            font-size: 32px
+            color: $red
+        span
+            font-size: 22px
+
+    li
+        display: inline
+        padding-left: 50px
+        cursor: pointer
+        position: relative
+        font-size: 28px
+
+    a
+        text-decoration: none
+        color: $white
+
+    img
+        width: 225px
+        height: 51px
+        cursor: pointer
+
+    .graph-button
+        background-color: #5A5C5E
+        border-radius: 24px
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px
+        padding: 4px 20px
+        border: solid #3A2D26 3px
+        transition: 2s ease-in
+        
+        &:hover
+            background: linear-gradient(180deg,#77B8ED 0%, $blue2 100%)
+
+    .pcs-button
+        color: $white
+        background-color: $red
+        border-radius: 24px
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px
+        padding: 4px 20px
+        border: solid #3A2D26 3px
+        &:hover
+            background: linear-gradient(180deg,#F2C558 0%, $red 100%)
+
+    .text-menu
+        &::after
+            position: absolute
+            top: 29px
+            width: 0%
+            left: 70%
+            height: 3px
+            content: ''
+            background-color: $orange
+            display: block
+            transition: left 0.15s ease-in, width 0.15s ease-in
+            border-radius: 2px
+
+        &:hover::after
+            width: 65%
+            left: 37%
+
+//mobile-nav
+.mobile-nav
+    display: none
+    @media screen and(max-width: 1300px)
+        width: 100%
+        display: block
+        position: fixed
+        background: linear-gradient(99deg, #EED7AB 0%, #C93B4F 100%)
+        z-index: 1000
+    #hamburger
+        margin-left: 80px
+
+    .mobile-nav-flex
+        display: flex
+        justify-content: space-between
+        align-items: center
+        padding: 0 20px
+        height: 80px
+
+    .mobile-nav-logo-flex
+        display: flex
+        gap: 30px
+        align-items: flex-start
+        h1
+            font-family: nordin
+            font-size: 32px
+            color: $red
+            @media screen and (max-width: 400px)
+                display: none
+        span
+            font-size: 22px
+            @media screen and (max-width: 600px)
+                display: none
+        img
+            width: 55px
+            transform: translateY(8px)
+            @media screen and (max-width: 400px)
+                width: 46px
+                transform: translateY(4px)
+
+    .mobile-nav-open
+        position: fixed
+        height: 100vh
+        width: 300px
+        right: 0
+        top: 0
+        background-color: $orange
+        transition: transform 0.4s ease-in-out
+
+        img
+            position: absolute
+            top: 80px
+            right: 40px
+
+        ul
+            position: relative
+            font-family: nordin
+            font-size: 42px
+            color: $cream
+            list-style: none
+            top: 16%
+            margin-left: -18px
+
+        li
+            padding: 20px
+            width: 77%
+            border-bottom: solid 1px $white
+            cursor: pointer
+
+    .mobile-nav-close
+        transform: translateX(200%)
+
+//header
+.header
+    background-image: url("./images/logobg.png")
+    background-size: cover
+    background-position: 0% 42%
+    background-repeat: no-repeat
+    object-fit: wrap
+    background-color: $blue1
+    height: 1050px
+    max-height: 1014px
+    @media screen and (max-width: 1600px)
+        height: 780px
+
+    @media screen and (max-width: 1279px)
+        height: 800px
+        padding: 200px 0 10px 0
+        background-position: right
+        background-size: cover
+
+    @media screen and (max-width: 600px)
+        height: 500px
+        padding-top: 320px
+
+    .graph-btn
+        background-color: #5A5C5E
+        border-radius: 24px
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px
+        padding: 2px 28px
+        border: solid #3A2D26 3px
+        transition: 2s ease-in
+        font-family: nordin
+        font-size: 40px
+        margin: 0 15px 0 15px
+        color: $cream
+        text-decoration: none
+        @media screen and (max-width: 600px)
+            padding-top: 320px
+            margin: 0 10px 0 10px
+            padding: 2px 20px
+            font-size: 32px
+        &:hover
+            background: linear-gradient(180deg,#77B8ED 0%, $blue2 100%)
+
+    .pcs-btn
+        color: $white
+        background-color: $red
+        border-radius: 24px
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px
+        padding: 2px 28px
+        border: solid #3A2D26 3px
+        font-size: 40px
+        font-family: nordin
+        margin: 0 15px 0 15px
+        color: $cream
+        text-decoration: none
+        @media screen and (max-width: 600px)
+            padding-top: 320px
+            margin: 0 10px 0 10px
+            padding: 2px 20px
+            font-size: 32px
+        &:hover
+            background: linear-gradient(180deg,#F2C558 0%, $red 100%)
+
+    .game-btn
+        position: absolute
+        left: 28%
+        margin-top: 110px
+        width: 380px
+        height: 110px
+        font-family: nordin
+        font-size: 60px
+        background-color: #EED7AB
+        border-radius: 61px
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px
+        border: solid #3A2D26 10px
+        transition: 0.15s ease-in-out
+        z-index: 1
+        cursor: pointer
+        &:hover
+            color: #eed7ab
+            background-color: #3A2D26
+            transition: 0.2s ease-in-out
+        @media screen and (max-width: 1600px)
+            margin-top: 60px
+            left: 22%
+        @media screen and (max-width: 1265px)
+            width: 300px
+            font-size: 48px
+            left: 50%
+            transform: translateX(-50%)
+            height: 80px
+        @media screen and (max-width: 600px)
+            width: 220px
+            font-size: 30px
+            left: 50%
+            transform: translate(-50%,30px)
+            height: 60px
+            margin-top: 30px
+
+    .header-blurbg
+        width: 100%
+        height: 462px
+        position: absolute
+        top: 246px
+        left: 0
+        background-color: rgba(255, 255, 255, 0)
+        backdrop-filter: blur(25px) contrast(1.01) brightness(1.04)
+        z-index: 1
+        @media screen and (max-width: 1600px)
+            top: 150px
+            height: 500px
+
+    .header-blurbg-mobile
+        width: 100%
+        height: 192px
+        position: absolute
+        top: 690px
+        left: 0
+        background-color: rgba(255, 255, 255, 0)
+        backdrop-filter: blur(25px) contrast(0.9) brightness(0.74)
+        z-index: 1
+        @media screen and (max-width: 790px)
+            height: 300px
+        @media screen and (max-width: 600px)
+            top: 640px
+            height: 160px
+
+    .header-flex
+        display: flex
+        align-items: flex-end
+        padding-top: 0px
+        height: 650px
+        padding-left: 7%
+        justify-content: center
+        width: 85%
+        @media screen and (max-width: 1600px)
+            height: 620px
+        @media screen and (max-width: 1279px)
+            display: none
+
+        img
+            position: relative
+            max-width: 900px
+            width: 53%
+            transform: translateY(34%)
+            z-index: 1
+            @media screen and (max-width: 1600px)
+                width: 600px
+                transform: translateY(140px)
+
+    .header-flex2
+        position: relative
+        z-index: 1
+        display: flex
+        justify-content: flex-start
+        gap: 100px
+        align-items: flex-start
+
+        backdrop-filer: blur(10px)
+
+        h2
+
+            background: $blue1
+            background: linear-gradient(180deg, $blue2 0%, $blue1 100%)
+            border-radius: 24px
+            box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px
+            padding: 40px 10px 0 10px
+            height: 40px
+            transition: 2s ease-in
+            cursor: pointer
+            &:hover
+                background: linear-gradient(180deg,#77B8ED 0%, $blue2 100%)
+
+    h1
+
+        font-size: 190px
+        font-family: nordin
+        color: $black
+        line-height: 0px
+        margin-bottom: 75px
+        @media screen and (max-width: 1480px)
+            font-size: 160px
+
+    span
+        font-size: 120px
+        @media screen and (max-width: 1480px)
+            font-size: 100px
+
+    h2
+        font-size: 40px
+        transform: translateY(5px)
+        font-family: homepageBold
+        color: $black
+        line-height: 0px
+        margin-bottom: -55px
+
+    .header-paragraph-flex
+        display: flex
+        align-items: center
+        justify-content: left
+        gap: 30px
+        position: relative
+        z-index: 1
+
+        h3
+            font-size: 135px
+            transform: translateY(5px)
+            font-family: homepageBold
+            color: $black
+            line-height: 0px
+            &::after
+                content: ""
+                position: absolute
+                display: block
+                height: 27px
+                width: 900px
+                background-color: $white
+                transform: translate(140px,-90px)
+                z-index: -1
+            @media screen and (max-width: 1600px)
+                &::after
+                    width: 800px
+
+        p
+            font-size: 30px
+            line-height: 24px
+            font-family: praditBold
+            color: $black
+            width: 800px
+            margin-top: 10px
+            @media screen and (max-width: 1600px)
+                width: 560px
+            @media screen and (max-width: 920px)
+                width: 85%
+                margin: auto
+                text-align: left
+            @media screen and (max-width: 600px)
+                width: 100%
+                font-size: $mobilesmallest
+
+    .header-flex-mobile
+        display: none
+        @media screen and (max-width: 1279px)
+            margin-top: -60px
+            display: flex
+            flex-direction: column
+            align-items: center
+            img
+                width: 400px
+                height: auto
+        @media screen and (max-width: 600px)
+            margin-top: -190px
+            padding-bottom: 30px
+            img
+                width: 330px
+
+        .header-paragraph-flex-mobile
+            display: flex
+            gap: 30px
+            align-items: flex-start
+            margin-top: 10px
+            position: inherit
+            z-index: 1
+            @media screen and (max-width: 600px)
+                flex-direction: column
+                align-items: center
+                gap: 0px
+            h1
+                font-family: homepageBold
+                font-size: 90px
+                margin-bottom: 60px
+                color: $white
+            h2
+                font-family: homepageBook
+                font-size: 65px
+                margin-bottom: -75px
+                color: $white
+            h3
+                font-family: homepageBold
+                font-size: 100px
+                color: $white
+            p
+                font-family: praditBold
+                font-size: 29px
+                color: $white
+                width: 78%
+                margin: auto
+                margin-top: 59px
+                @media screen and (max-width: 600px)
+                    font-size: 18px
+                    width: 70%
+                    font-size: 14px
+                    margin-top: 100px
+                    line-height: 17px
+
+//features
+.features
+    padding-top: 120px
+    padding-bottom: 100px
+    margin-bottom
+    text-align: center
+    @media screen and (max-width: 600px)
+        padding-top: 120px
+
+    h1
+        font-size: $header
+        font-size: 90px
+        font-family: nordinRough
+        color: $red
+        margin-top: -25px
+        @media screen and (max-width: 600px)
+            font-size: 72px
+            margin-top: -18px
+
+    .features-line
+        display: block
+        height: 3px
+        width: 225px
+        background-color: $orange
+        position: absolute
+        left: 50%
+        transform: translateX(-50%)
+        margin-top: -65px
+        @media screen and (max-width: 600px)
+            width: 80%
+            margin-top: -52px
+            width: 180px
+
+    .features-flex
+        padding-top: 260px
+        display: flex
+        justify-content: center
+        gap: 56px
+        @media screen and (max-width: 1150px)
+            flex-direction: column
+            align-items: center
+            padding-top: 30px
+            margin-left: 150px
+        @media screen and (max-width: 600px)
+            padding-top: 40px
+
+    .features-box
+        width: 240px
+        padding: 0px 42px 0 42px
+        height: 370px
+        background: linear-gradient(180deg,#FFFFF4 0%,#EED7AB 100%)
+        border-radius: 51px
+        @media screen and (max-width: 1150px)
+            box-shadow: none
+            background: linear-gradient(90deg,#FFFFF4 0%,#EED7AB 100%)
+            height: auto
+            width: 40%
+            padding: 0px 42px 0 80px
+            text-align: left
+        @media screen and (max-width: 600px)
+            width: 80%
+            padding-left: 30px
+            padding-top: 35px
+            border-radius: 21px
+
+        h1
+            font-size: 60px
+            color: $red
+            font-family: nordin
+            line-height: 48px
+            @media screen and (max-width: 600px)
+                font-size: $small
+
+        p
+            font-size: 28px
+            color: $black
+            line-height: 26px
+            font-family: helvethaicaX
+            margin-top: -6px
+            @media screen and (max-width: 600px)
+                font-size: 18px
+                margin-top: 0
+
+        img
+            display: absolute
+            transform: translateY(-230px)
+            margin-bottom: -190px
+            @media screen and (max-width: 1150px)
+                display: none
+
+        .mobile
+            display: none
+            display: absolute
+            transform: translateY(-60px)
+            margin-top: 60px
+            margin-left: -230px
+            width: 200px
+            @media screen and (max-width: 1150px)
+                display: block
+            @media screen and (max-width: 600px)
+                width: 126px
+                margin-left: -140px
+                transform: translateY(-100px)
+
+//tokenomics
+.tokenomics
+    background: url('./images/tokenomicsbg.png')
+    background-repeat: no-repeat
+    background-size: cover
+    background-position: 40%
+    height: 990px
+    padding-top: 15vh
+    padding-bottom: 0vh
+    text-align: center
+    #chart-mobile
+        display: none
+        @media screen and (max-width: 750px)
+            display: block
+            width: 280px
+            margin: auto
+        @media screen and (max-width: 400px)
+            width: 230px
+    @media screen and (max-width: 1450px)
+        height: 900px
+    @media screen and (max-width: 1250px)
+        background-size: 250%
+        background-position: 60% top
+        height: auto
+        padding-bottom: 18vh
+        padding-top: 12vh
+    @media screen and (max-width: 850px)
+        background-size: 500%
+        background-position: 60% top
+        height: auto
+        padding-bottom: 0vh
+        padding-top: 16vh
+    @media screen and (max-width: 390px)
+        background-size: 600%
+        background-position: 60% top
+
+    h1
+        font-size: $header
+        font-size: 90px
+        font-family: nordinRough
+        color: $red
+        margin-top: -25px
+        @media screen and (max-width: 600px)
+            font-size: 72px
+            margin-top: -18px
+
+    .tokenomics-line
+        display: block
+        height: 3px
+        width: 280px
+        background-color: $orange
+        position: absolute
+        left: 50%
+        transform: translateX(-50%)
+        margin-top: -65px
+        @media screen and (max-width: 600px)
+            width: 80%
+            margin-top: -52px
+            width: 220px
+
+    .tokenomics-box
+        display: flex
+        flex-direction: column
+        align-items: flex-start
+
+    .tokenomics-flex
+        display: flex
+        justify-content: space-around
+        padding-top: 2vh
+        margin-left: -180px
+        gap: 30px
+        @media screen and (max-width: 1250px)
+            display: none
+
+        h2
+            font-size: $big
+            font-weight: normal
+            line-height: 36px
+            @media screen and (max-width: 600px)
+                font-size: $small
+                line-height: 15px
+
+        span
+            font-size: 48px
+            font-family: gothamBold
+            @media screen and (max-width: 600px)
+                font-size: 32px
+
+        #chart
+            transform: translateX(220px)
+            @media screen and (max-width:1450px)
+                width: 600px
+
+            @media screen and (max-width: 1150px)
+                width: 600px
+                margin-left: -300px
+
+            @media screen and (max-width: 750px)
+                display: none
+
+
+        #chart2
+            @media screen and (max-width:1450px)
+                width: 675px
+            @media screen and (max-width: 1150px)
+                width: 440px
+            @media screen and (max-width: 1150px)
+                width: 400px
+                margin: auto
+            @media screen and (max-width: 500px)
+                width: 280px
+
+//roadmap
+.roadmap
+    padding-top: 15vh
+    padding-bottom: 15vh
+    text-align: center
+
+    @media screen and (max-width: 1279px)
+        padding-bottom: 3vh
+
+    @media screen and (max-width: 600px)
+        padding-top: 14vh
+        padding-bottom: 10vh
+
+    h1
+        font-size: $header
+        font-size: 90px
+        font-family: nordinRough
+        color: $red
+        margin-top: -25px
+        @media screen and (max-width: 600px)
+            font-size: 72px
+            margin-top: -18px
+
+    .roadmap-line
+        display: block
+        height: 3px
+        width: 220px
+        background-color: $orange
+        position: absolute
+        left: 50%
+        transform: translateX(-50%)
+        margin-top: -64px
+        @media screen and (max-width: 600px)
+            width: 80%
+            margin-top: -52px
+            width: 170px
+
+    .roadmap-flex
+        padding-top: 170px
+        display: flex
+        justify-content: center
+        gap: 10px
+        @media screen and (max-width: 1279px)
+            flex-direction: column
+            align-items: center
+            gap: 0px
+            padding-top: 0px
+            margin-top: -30px
+            &::after
+                display: none
+
+    .roadmap-box
+        text-align: left
+        width: 350px
+        padding: 0px 31px 0 31px
+        height: 540px
+        background: linear-gradient(180deg,#fffff4 0%,#F8EFD7 100%)
+        border-radius: 51px
+
+        h2
+            display: none
+            font-family: nordin
+            color: $red
+            padding-top: 0
+            margin-top: -40px
+            &::before
+                content: ""
+                display: block
+                position: relative
+                background-color: $red
+                border-radius: 100%
+                height: 73px
+                width: 73px
+                transform: translate(-120px,70px)
+
+            @media screen and (max-width: 1279px)
+                display: block
+                font-size: 60px
+                margin-bottom: 20px
+
+        @media screen and (max-width: 1279px)
+            height: auto
+            padding-bottom: 0px
+            padding-left: 50px
+            padding-top: 0px
+
+            &::before
+                transform: translate(-230px,35px)
+
+        @media screen and (max-width: 600px)
+            height: auto
+            width: 280px
+            transform: translateX(15px)
+            &::before
+                height: 48px
+                width: 48px
+                transform: translate(-190px,27px)
+
+        @media screen and (max-width: 400px)
+            width: 240px
+
+        h1
+            font-size: $verybig
+            font-family: gothamBold
+            color: $cream
+            margin-bottom: 30px
+
+            @media screen and (max-width: 600px)
+                font-size: $big
+                margin-bottom: 15px
+                &::before
+                    height: 450px
+                    width: 10px
+                    transform: translate(-60px,10px)
+
+        .roadmap-no-line
+            &::before
+                display: none
+
+        span
+            color: $red
+            font-family: gotham
+
+    .mobile-line
+        display: none
+        @media screen and (max-width: 1279px)
+            content: ""
+            display: block
+            position: absolute
+            background-color: $red
+            width: 20px
+            height: 1100px
+            transform: translate(-133px,-50px)
+        @media screen and (max-width: 600px)
+            height: 1030px
+            transform: translate(-133px,-50px)
+        @media screen and (max-width: 400px)
+            height: 1080px
+            transform: translate(-133px,-50px)
+
+    ul
+        margin-top: -3px
+
+        li
+            font-size: 28px
+            line-height: 40px
+            font-family: helvethaicaX
+            color: brown
+            @media screen and (max-width: 600px)
+                font-size: 21px
+                line-height: 36px
+            
+
+    .roadmap-arrow-mobile
+        display: none
+        @media screen and (max-width: 1279px)
+            display: block
+            transform: translate(-175px,00px)
+            height: 50px
+
+    .roadmap-arrow
+        transform: translate(-30px,-145px) scaleX(1.1)
+        height: 50px
+        @media screen and (max-width: 1550px)
+            transform: translate(-20px,-145px) scaleX(1)
+        @media screen and (max-width: 1279px)
+            display: none
+
+        h1
+            font-family: nordin
+            font-size: 72px
+            color: $cream
+            transform: translate(136px,-84px)
+
+//marketing
+.marketing
+    padding-top: 15vh
+    padding-bottom: 15vh
+    text-align: center
+    background: url('./images/marketingbg.png') no-repeat $red 
+
+    @media screen and (max-width: 1279px)
+        padding-top: 8vh
+        padding-bottom: 5vh
+        background: url('./images/marketingbg-mobile.png') no-repeat $red
+
+    @media screen and (max-width: 600px)
+        padding-top: 14vh
+        padding-bottom: 3vh
+        background: url('./images/marketingbg-mobile.png') no-repeat $red
+
+    h1
+        font-size: 90px
+        font-family: nordinRough
+        color: $black
+        margin-top: -25px
+        @media screen and (max-width: 600px)
+            font-size: 72px
+            margin-top: -18px
+
+    .marketing-line
+        display: block
+        height: 3px
+        width: 275px
+        background-color: $orange
+        position: absolute
+        left: 50%
+        transform: translateX(-50%)
+        margin-top: -62px
+        @media screen and (max-width: 600px)
+            width: 80%
+            margin-top: -54px
+            width: 200px
+
+    .marketing-flex
+        padding-top: 130px
+        display: flex
+        justify-content: center
+        gap: 10px
+        @media screen and (max-width: 1279px)
+            flex-direction: column
+            align-items: center
+            gap: 0px
+            padding-top: 30px
+            &::after
+                display: none
+        @media screen and (max-width: 600px)
+            padding-top: 20px
+
+    .marketing-box
+        position: relative
+        text-align: left
+        width: 320px
+        padding: 0px 30px 0 62px
+        height: 520px
+        background: $cream
+        border-radius: 51px
+
+        @media screen and (max-width: 1279px)
+            height: auto
+            padding-bottom: 0px
+            padding-left: 50px
+            margin-bottom: 88px
+            &::before
+                transform: translate(-230px,35px)
+
+        @media screen and (max-width: 600px)
+            height: auto
+            padding: 30px 30px 30px 62px
+            width: 280px
+            transform: translateX(15px)
+            margin-bottom: 45px
+            &::before
+                height: 48px
+                width: 48px
+                transform: translate(-190px,27px)
+
+        @media screen and (max-width: 400px)
+            width: 240px
+
+        h2
+            font-size: 60px
+            font-family: helvethaicaBdCond
+            color: $cream   
+            background-color: $red
+            margin-bottom: 30px
+            height: 30px
+            border-radius: 50px 50px 0 0
+            padding: 30px 0 25px 0
+            width: 413px
+            margin-left: -62px
+            margin-top: -50px
+            text-align: center
+            @media screen and (max-width: 600px)
+                width: 373px
+                font-size: 36px
+                height: 40px
+                padding-top: 40px
+            @media screen and (max-width: 400px)
+                width: 333px
+
+            span
+                font-size: 48px
+
+                @media screen and (max-width: 600px)
+                    font-size: 24px
+
+            @media screen and (max-width: 600px)
+                font-size: $big
+                margin-bottom: 15px
+                &::before
+                    height: 450px
+                    width: 10px
+                    transform: translate(-60px,10px)
+        .marketing-no-line
+            &::before
+                display: none
+
+    .marketing-detail
+        margin-left: 30px
+        @media screen and (max-width: 1279px)
+            margin-left: 15px
+
+        h2
+            color: $black
+            font-size: $morethanmediumbutnotbig
+            font-family: helvethaicaBdCond
+            font-size: 60px
+            line-height: 48px
+            height: 135px
+            @media screen and (max-width: 600px)
+                font-size: $verysmall
+                height: 77px
+                font-size: 36px
+                line-height: 28px
+
+        h3
+            color: $black
+            font-size: $small
+            font-family: helvethaicaItalic
+            font-size: 36px
+            line-height: 0px
+            @media screen and (max-width: 600px)
+                font-size: 24px
+                line-height: 4px
+        ul
+            margin-top: 40px
+            list-style: none
+            font-family: helvethaicaX
+            font-size: 28px
+            line-height: 26px
+            color: $black
+            padding: 0
+            @media screen and (max-width: 600px)
+                margin-top: 25px
+                font-size: 20px
+                line-height: 18px
+
+        li
+            margin-bottom: 25px
+            @media screen and (max-width: 1279px)
+                margin-bottom: 23px
+            @media screen and (max-width: 600px)
+                margin-bottom: 20px
+
+        &::before
+            content: ""
+            display: block
+            height: 255px
+            width: 10px
+            background-color: $orange
+            position: absolute
+            margin-left: -30px
+            margin-top: 0px
+            @media screen and (max-width: 1200px)
+                height: 180px
+
+        @media screen and (max-width: 600px)
+            &::before
+                height: 138px
+                margin-top: 2px
+
+    .marketing-arrow-mobile
+        display: none
+        @media screen and (max-width: 1279px)
+            display: block
+            transform: translate(-175px,00px)
+            height: 50px
+
+    .marketing-arrow
+        transform: translate(-50px,-145px) scaleX(1.1)
+        height: 50px
+        @media screen and (max-width: 1550px)
+            transform: translate(-50px,-145px) scaleX(1)
+        @media screen and (max-width: 1279px)
+            display: none
+
+        h1
+            font-family: helvethaicaX
+            font-size: 72px
+            color: $white
+            transform: translate(120px,-90px)
+
+//contact
+.contact
+    background-color: #5A5C5E
+    padding: 40px
+    @media screen and (max-width: 1079px)
+        padding: 30px 80px
+    @media screen and (max-width: 600px)
+        padding: 30px 30px
+    .contact-flex
+        display: flex
+        justify-content: center
+        align-items: center
+        gap: 100px
+        @media screen and (max-width: 1079px)
+            flex-direction: column
+            align-items: flex-start
+            gap: 18px
+            height: auto
+        h1
+            font-family: nordin
+            font-size: 60px
+            color: #fffff4
+            line-height: 20px
+            @media screen and (max-width: 600px)
+                font-size: $medium
+                line-height: 10px
+        a
+            font-size: 36px
+            color: #fffff4
+            text-decoration: none
+            cursor: pointer
+            font-family: nordin
+            &:hover
+                color: #d8d8ab
+            @media screen and (max-width: 600px)
+                font-size: 22px
+                line-height: 0px
+
+        img
+            transform: translateY(7px)
+            margin-right: 15px
+            width: 33px
+
+.game
+    height: 105vh
+    background-image: url(./images/gamebg.png)
+    background-position: center 160%
+    background-repeat: no-repeat
+    background-size: 120% 60%
+    margin-top: -60px
+    padding-top: 25px
+    text-align: center
+    font-family: nordin
+    color: #792330
+    @media screen and (max-width: 1279px)
+        background-image: url(./images/gamebg.png)
+        background-position: center center
+        background-size: cover
+        padding-bottom: 30px
+        height: auto
+    .bottom
+        width: 100%
+        position: absolute
+        bottom: 0
+    h1
+        font-size: 90px
+        @media screen and (max-width: 1279px)
+            font-size: 72px
+        @media screen and (max-width: 600px)
+            font-size: 40px
+            margin-top: 60px
+        
+    .game-flex
+        justify-content: center
+        display: flex
+        gap: 10px
+        margin-top: -60px
+        @media screen and (max-width: 1279px)
+            flex-wrap: wrap
+            flex-direction: column
+            gap: 20px
+            align-items: center
+        h2
+            font-size: 60px
+            @media screen and (max-width: 1279px)
+                font-size: 48px
+            @media screen and (max-width: 600px)
+                font-size: 33px
+                margin-top: 54px
+        .game-leaderboard
+            text-align: center
+            width: 270px
+            padding: 0 30px 0 59px
+            @media screen and (max-width: 600px)
+                padding-bottom: 0px
+            li
+            .blurbg
+                backdrop-filter: blur(30px) brightness(1.04) contrast(1.05)
+            ul
+                margin-top: -40px
+                padding: 10px 10px 0px 10px
+                @media screen and (max-width: 600px)
+                    margin-top: 0px
+            li
+                height: 50px
+                padding: 0 20px 0 20px
+                display: flex
+                align-items: center
+                justify-content: space-between
+                border-bottom: solid 2px #989192
+                @media screen and (max-width: 600px)
+                    padding: 0 10px 0 10px
+                    height: 38px
+                h3,h4
+                    font-size: 28px
+                    line-height: 0px
+                    @media screen and (max-width: 600px)
+                        font-size: 20px
+                    
+                h4
+                    font-family: bebas
+                    color : #C93B4F
+        
+        .game-reward
+            width: 500px
+            @media screen and (max-width: 1279px)
+                width: 80%
+            img
+                width: 100%
+                max-width: 450px
+                min-width: 280px
+           
+        .game-instruction
+            width: 350px
+            text-align: center
+            ol
+                font-family: bebas
+                margin-top: -37px
+                padding : 0
+                @media screen and (max-width: 600px)
+                    margin-top: -20px
+                    width: 85%
+                    margin-left: 10%
+                    margin-bottom: -60px
+            li
+                text-align: left
+                font-family: bebas
+                font-size: 25px
+                margin-bottom: 10px
+                @media screen and (max-width: 1279px)
+                    font-size: 19px
+                @media screen and (max-width: 600px)
+                    font-size: 15px
+                    
+
+        .game-form
+
+            form
+                backdrop-filter: blur(20px) brightness(0.8) contrast(1.2)
+                border-radius: 30px
+                padding: 15px 30px
+                text-align: center
+                margin-top: 70px
+                @media screen and (max-width: 1279px)
+                    margin-top: 5px
+
+            label
+                font-size: 24px
+                font-family: bebas
+                @media screen and (max-width: 600px)
+                    font-size: 18px
+            input
+                width: 250px
+                font-size: 18px
+                margin-top: 9px
+                margin-bottom: 14px
+                @media screen and (max-width: 600px)
+                    font-size: 16px
+
+            .ready-btn
+                font-family: nordin
+                color: #FFFFF4
+                background-color: $red
+                width: 220px
+                margin: auto
+                margin-top: 10px
+                font-size: 60px
+                border-radius: 39px
+                border: 5px #3A2D26 solid
+                padding: 5px 0 5px 0
+                cursor: pointer
+                @media screen and (max-width: 600px)
+                    font-size: 30px
+                    width: 180px
+                &:hover
+                    background-color: #ac192c
+                    transition: .17s
+            
+            .disable-btn
+                font-family: nordin
+                color: #e7e7bca9
+                background-color: gray
+                width: 250px
+                margin: auto
+                margin-top: 10px
+                font-size: 60px
+                border-radius: 39px
+                border: 5px #3A2D26 solid
+                padding: 5px 0 5px 0
+                cursor: not-allowed
+                @media screen and (max-width: 600px)
+                    font-size: 30px
+                    width: 180px
+    
+.countdown
+    display: grid
+    justify-content: center
+    align-items: center
+    height: 100vh
+
+.logopop
+    height: 108vh
+    background-image: url(./images/logobg.png)
+    background-size: 130%
+    background-position: center
+    text-align: center
+    overflow-y: hidden
+
+    .blur-bg
+        height: 150px
+        padding: 10px
+        backdrop-filter: blur(20px) contrast(1.02)
+
+.pseudo-btn
+    height: 40px
+
+.show-point
+    text-align: center
+    font-family: nordin
+    font-size: 30px
+    @media screen and (max-width: 600px)
+        font-size: 20px
+    button
+        font-family: nordin
+        color: #FFFFF4
+        background-color: $red
+        width: 500px
+        margin: auto
+        margin-top: -150px
+        font-size: 30px
+        border-radius: 39px
+        border: 5px #3A2D26 solid
+        padding: 5px 0 5px 0
+        cursor: pointer
+        @media screen and (max-width: 600px)
+            font-size: 20px
+            width: 200px
+        &:hover
+            background-color: #ac192c
+            transition: .17s
+        
